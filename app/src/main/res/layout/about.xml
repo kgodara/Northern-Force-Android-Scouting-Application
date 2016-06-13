@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#ffb3b3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:layout_gravity="center"
+    >
+
+
+
+    <TextView
+        android:layout_gravity="center|center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text = "Complete Data Manager"
+        android:textColor="#00548c"
+        android:textSize="10pt"
+        android:textStyle="bold"
+
+        />
+
+
+    <TextView
+        android:layout_gravity="center|center"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="The Complete Data Manager application is designed to allow for individuals and groups to take control of the data collecting process start to finish!\n\nIt begins with the ability for anyone to intuitively produce a unique data submission layout, which includes their own questions and input formats. Using this data submission layout anyone can collect and enter relevant data to be stored on the device. This makes it great for things such as surveys or data collection with different individuals submitting the data!\n\nThe Complete Data Manager also allows for you to scale the scope of your data collection indefinitely thanks to the integrated Bluetooth layout and data sharing. Go to the “How To Use” section for more details on this.\n\nAfter your data has been collected, you can view it in the “View Data” section. Or, if you would like more access to your data you can export it to your computer in a csv (Comma Separated Value) file format to view it through spreadsheet applications such as Microsoft Excel. For information on how to use this application please refer to the “How To Use Section” in the main menu.
+"
+        android:textColor="#00548c"
+
+        />
+
+
+
+    <TextView
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text = "Uses in Community:"
+        android:layout_gravity="center|center"
+        android:textColor="#00548c"
+        android:textSize="10pt"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text = "Used by FIRST Robotics Team 172 for scouting at FIRST Robotics events, replaced paper\nCollect data for surveys by individuals or organizations\nCollect data for science experiments as a part of the Maine State Science Fair\nCollect data for experiments done in science classes\nCollect data for personal pursuits"
+        android:layout_gravity="center|center"
+        android:textColor="#00548c"
+        />
+
+
+
+
+
+
+
+
+    <TextView
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text = "Special Thanks: "
+        android:layout_gravity="center|center"
+        android:textColor="#00548c"
+        android:textSize="10pt"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text = "A special thanks goes to Mr. Joe Porter, Computer Science and Chemistry teacher at Falmouth High School for his advice about the competition."
+        android:layout_gravity="center|center"
+        android:textColor="#00548c"
+        />
+
+    <TextView
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text = "References: "
+        android:layout_gravity="center|center"
+        android:textColor="#00548c"
+        android:textSize="10pt"
+        android:textStyle="bold"
+        />
+
+
+    <TextView
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text = "Made with Android Studio\n"
+        android:layout_gravity="center|center"
+        android:textColor="#00548c"
+        android:layout_marginBottom="6dp"
+        />
+
+    <TextView
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text = "https://www.youtube.com/watch?v=Z24dqfJeffI"
+        android:layout_gravity="center|center"
+        android:textColor="#00548c"
+        android:layout_marginBottom="6dp"
+        android:autoLink="web"
+        />
+
+
+
+
+</LinearLayout>
+
+</ScrollView>

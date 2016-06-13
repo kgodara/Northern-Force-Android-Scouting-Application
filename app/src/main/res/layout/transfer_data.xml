@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id = "@+id/content"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/exportToFileTitle"
+            android:layout_gravity="center|center"
+            android:layout_width="wrap_content"
+
+            android:textColor="#969696"
+            android:textSize="24dp"
+            android:text="Export Data To File"
+            android:layout_height="wrap_content"
+
+
+            />
+
+
+    <EditText
+        android:layout_gravity="center|center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fileName"
+        android:hint="Enter File Name"
+
+        />
+
+    <Button
+        android:layout_gravity="center|center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/exportButton"
+        android:text="Export"
+        android:layout_below="@+id/fileName"
+        />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/makeLayout"
+            android:layout_gravity="center|center"
+            android:background="@android:color/darker_gray"
+            />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bluetoothHeader"
+            android:text="Bluetooth"
+            android:textColor="#969696"
+            android:textSize="24dp"
+            />
+
+        
+        <RadioButton
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send Collected Data"
+            android:id="@+id/sendData"
+
+            />
+
+        <RadioButton
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send Custom Layout"
+            android:layout_marginBottom="14dp"
+            android:id="@+id/sendLayout"
+            />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Receive Sent Layout/Data"
+            android:id="@+id/receiveLayout"
+
+            />
+
+
+        <TextView
+            android:id="@+id/bluetoothAddressHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bluetooth Address of Other Device"
+            android:textColor="#969696"
+            android:textSize="10pt"
+            android:visibility="gone"
+            />
+ <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="left|top"
+            android:columnCount="11"
+            android:orientation="horizontal"
+            android:id = "@+id/griddie">
+
+     <EditText
+            android:minLines="1"
+            android:gravity="top|left"
+            android:maxLines="1"
+
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:scrollbars="vertical"
+            android:hint="    "
+            android:textSize="8pt"
+            android:textColor="#000000"
+            android:id = "@+id/address1"
+         android:visibility="gone"
+            />
+
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text = ":"
+         android:textColor="#969696"
+         android:textSize="10pt"
+         android:visibility="gone"
+         android:id="@+id/colon1"
+         />
+
+     <EditText
+         android:minLines="1"
+         android:gravity="top|left"
+         android:maxLines="1"
+         android:maxLength="2"
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:scrollbars="vertical"
+         android:hint="    "
+         android:textSize="8pt"
+         android:textColor="#000000"
+         android:id = "@+id/address2"
+         android:visibility="gone"
+         />
+
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text = ":"
+         android:textColor="#969696"
+         android:textSize="10pt"
+         android:visibility="gone"
+         android:id="@+id/colon2"
+         />
+
+     <EditText
+         android:minLines="1"
+         android:maxLength="2"
+         android:gravity="top|left"
+         android:maxLines="1"
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:scrollbars="vertical"
+         android:hint="    "
+         android:textSize="8pt"
+         android:textColor="#000000"
+         android:id = "@+id/address3"
+         android:visibility="gone"
+         />
+
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text = ":"
+         android:textColor="#969696"
+         android:textSize="10pt"
+         android:visibility="gone"
+         android:id="@+id/colon3"
+         />
+
+
+     <EditText
+         android:minLines="1"
+         android:maxLength="2"
+         android:gravity="top|left"
+         android:maxLines="1"
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:scrollbars="vertical"
+         android:hint="    "
+         android:textSize="8pt"
+         android:textColor="#000000"
+         android:id = "@+id/address4"
+         android:visibility="gone"
+         />
+
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text = ":"
+         android:textColor="#969696"
+         android:textSize="10pt"
+         android:visibility="gone"
+         android:id="@+id/colon4"
+         />
+
+     <EditText
+         android:minLines="1"
+         android:maxLength="2"
+         android:gravity="top|left"
+         android:maxLines="1"
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:scrollbars="vertical"
+         android:hint="    "
+         android:textSize="8pt"
+         android:textColor="#000000"
+         android:id = "@+id/address5"
+         android:visibility="gone"
+         />
+
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text = ":"
+         android:textColor="#969696"
+         android:textSize="10pt"
+         android:visibility="gone"
+         android:id="@+id/colon5"
+         />
+
+     <EditText
+         android:minLines="1"
+         android:maxLength="2"
+         android:gravity="top|left"
+         android:maxLines="1"
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:scrollbars="vertical"
+         android:hint="    "
+         android:textSize="8pt"
+         android:textColor="#000000"
+         android:id = "@+id/address6"
+         android:visibility="gone"
+         />
+
+</GridLayout>
+        <Button
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/beginProcess"
+            android:text="Begin Bluetooth Process"
+            />
+
+
+
+    </LinearLayout>
+
+
+
+
+
+</RelativeLayout>

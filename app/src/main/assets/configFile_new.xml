@@ -1,0 +1,152 @@
+<config>
+	<table
+		name="Teams">
+		<column
+			name="Team_Number"
+			type="int"
+			text="Team Number"></column>
+		<column
+			name="Team_Name"
+			type="String"
+			text="Team Name"></column>
+		<column
+			name="High_School"
+			type="String"
+			text="High School"></column>
+		
+	</table>
+	
+	<table
+		name="Matches">
+		<column
+			name="Team_Number"
+			type="int"
+			text="Team Number"></column>
+		<column
+			name="Match_Number"
+			type="int"
+			text="Match Number"></column>	
+		<column
+			name="Event_Name"
+			type="String"
+			text="Event Name"></column>
+		<column
+			name="Red_One"
+			type="int"
+			text="Red One"></column>
+		<column
+			name="Red_Two"
+			type="int"
+			text="Red Two"></column>
+		<column
+			name="Red_Three"
+			type="int"
+			text="Red Three"></column>
+		<column
+			name="Blue_One"
+			type="int"
+			text="Blue One"></column>
+		<column
+			name="Blue_Two"
+			type="int"
+			text="Blue Two"></column>
+		<column
+			name="Blue_Three"
+			type="int"
+			text="Blue Three"></column>
+	</table>
+	
+	<table
+		name="Performance">
+		<column
+			name="Team_Number"
+			type="int"
+			text="Team Number"></column>
+		<column
+			name="Match_Number"
+			type="int"
+			text="Match Number"></column>
+		<column
+			name="crossOutW"
+			type="YorN"
+			text="(Auto)Did they cross the out works?"></column>
+		<column
+			name="breachD"
+			type="YorN"
+			text="(Auto)Did they cross the out works?"></column>
+		<column
+			name="whichBreached"
+			type="Options_Spinner"
+			text="(Auto)If so which one?"
+			options="PORTCULLIS,CHEVAL DE FRISE,MOAT,RAMPARTS,DRAWBRIDGE,SALLY PORT,ROCK WALL,ROUGH TERRAIN,LOW BAR"></column>
+		<column
+			name="didScore"
+			type="YorN"
+			text="(Auto)Did they score?"></column>
+		<column
+			name="highOrLowA"
+			type="Options_Spinner"
+			text="Auto)High goal or low goal?"
+			options="HIGH, LOW"></column>
+		<column
+			name="didOvercome"
+			type="YorN"
+			text="(Tele)Did they breach any defenses, which?"></column>
+		<column
+			name="obstaclesOvercome"
+			type="Options_Spinner"
+			text="(Tele)Which obstacles did they overcome?"
+			options="PORTCULLIS,CHEVAL DE FRISE,MOAT,RAMPARTS,DRAWBRIDGE,SALLY PORT,ROCK WALL,ROUGH TERRAIN,LOW BAR"></column>
+		<column
+			name="failed"
+			type="YorN"
+			text="(Tele)Did they fail to overcome any defences?"></column>
+		<column
+			name="obstaclesFailed"
+			type="Options_Spinner"
+			text="(Tele)Which obstacles did they fail?"
+			options="PORTCULLIS,CHEVAL DE FRISE,MOAT,RAMPARTS,DRAWBRIDGE,SALLY PORT,ROCK WALL,ROUGH TERRAIN,LOW BAR"></column>
+		<column
+			name="highOrLowT"
+			type="Options_Spinner"
+			text="(Tele)Do they shoot high or score low?"
+			options="SHOOT HIGH, SHOOT LOW"></column>	
+		<column
+			name="reliability"
+			type="YorN"
+			text="(Tele)Are they a reliable scorer?"></column>	
+		<column
+			name="offOrDef"
+			type="Options_Spinner"
+			text="(Tele)Do they tend to do offense or defense?"
+			options="OFFENSE,DEFENSE"></column>	
+		<column
+			name="didChallenge"
+			type="YorN"
+			text="(Tele)Did they challenge the tower?"></column>
+		<column
+			name="didScale"
+			type="YorN"
+			text="(Tele)Did they scale the tower?"></column>
+		<column
+			name="Comments"
+			type="String"
+			text="Other Comments"></column>
+	</table>
+	
+	<table
+		name="Events">
+		<column
+			name="Event_Name"
+			type="String"
+			text="Event Name"></column>
+		<column
+			name="Date"
+			type="String"
+			text="Date"></column>
+		<column
+			name="Location"
+			type="String"
+			text="Location"></column>
+	</table>
+</config>

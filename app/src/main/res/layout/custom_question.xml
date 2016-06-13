@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="left|top"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:columnCount="1"
+    android:orientation="horizontal"
+    android:id = "@+id/gridLayout">
+
+    <Button
+
+
+
+        android:layout_row="1"
+        android:minLines="1"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Delete Question"
+        android:textSize="10pt"
+        android:textColor="#000000"
+        android:id = "@+id/deleteQuestion"
+        android:visibility="gone"
+        android:layout_marginBottom="20dp"
+
+
+        />
+
+    <EditText
+
+        android:layout_row="2"
+        android:inputType="textMultiLine"
+        android:lines="3"
+        android:minLines="1"
+        android:gravity="top|left"
+        android:maxLines="3"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:scrollbars="vertical"
+        android:hint="Your Question"
+        android:textSize="10pt"
+        android:textColor="#000000"
+        android:id = "@+id/userQuestion"
+        android:layout_column="0" />
+
+    <Spinner
+        android:layout_row="14"
+        android:layout_marginTop="20px"
+        android:id="@+id/inputOptions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        />
+
+
+    <!--  BEGINNING OF NUMBER INPUT LAYOUT SECTION  !-->
+    <TextView
+
+        android:layout_row="5"
+        android:layout_column="0"
+        android:text="Set Range (Leave blank for no range):"
+        android:textSize="10pt"
+        android:id = "@+id/rangePrompt"
+        android:visibility="gone"
+        />
+
+    <EditText
+
+        android:inputType="number"
+        android:layout_row="6"
+        android:minLines="1"
+        android:gravity="top|left"
+        android:maxLines="3"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_column="0"
+        android:scrollbars="vertical"
+        android:hint="Enter Lower Bound:"
+        android:textSize="10pt"
+        android:textColor="#000000"
+        android:id = "@+id/lowRangeInput"
+        android:visibility="gone"
+
+
+        />
+
+    <EditText
+
+        android:inputType="number"
+        android:layout_row="7"
+        android:minLines="1"
+        android:gravity="top|left"
+        android:maxLines="3"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_column="0"
+        android:scrollbars="vertical"
+        android:hint="Enter Upper Bound:"
+        android:textSize="10pt"
+        android:textColor="#000000"
+        android:id = "@+id/highRangeInput"
+        android:visibility="gone"
+
+
+        />
+    <!--  END OF NUMBER INPUT LAYOUT SECTION  !-->
+
+
+
+
+    <!--  BEGINNING OF TRUE/FALSE LAYOUT SECTION  !-->
+
+    <TextView
+
+        android:layout_row="5"
+        android:layout_column="0"
+        android:text="Set True and False Label Options:"
+        android:textSize="10pt"
+        android:id = "@+id/trueFalsePrompt"
+        android:visibility="gone"
+        />
+
+
+    <EditText
+
+
+
+        android:layout_row="6"
+        android:minLines="1"
+        android:gravity="top|left"
+        android:maxLines="3"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_column="0"
+        android:scrollbars="vertical"
+        android:hint="Enter True Option Label:"
+        android:textSize="10pt"
+        android:textColor="#000000"
+        android:id = "@+id/trueLabelInput"
+        android:visibility="gone"
+
+        />
+
+    <EditText
+
+
+        android:layout_row="7"
+        android:minLines="1"
+        android:gravity="top|left"
+        android:maxLines="3"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_column="0"
+        android:scrollbars="vertical"
+        android:hint="Enter False Option Label:"
+        android:textSize="10pt"
+        android:textColor="#000000"
+        android:id = "@+id/falseLabelInput"
+        android:visibility="gone"
+
+        />
+
+
+
+
+
+    <!--  END OF TRUE/FALSE INPUT LAYOUT SECTION  !-->
+
+    <!--  BEGINNING OF TEXTFIELD INPUT LAYOUT SECTION  !-->
+
+    <EditText
+
+
+        android:layout_row="5"
+        android:minLines="1"
+        android:gravity="top|left"
+        android:maxLines="3"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_column="0"
+        android:scrollbars="vertical"
+        android:hint="Enter Hint for Text Field:"
+        android:textSize="10pt"
+        android:textColor="#000000"
+        android:id = "@+id/textFieldHintInput"
+        android:visibility="gone"
+
+        />
+
+    <!--  END OF TEXTFIELD INPUT LAYOUT SECTION  !-->
+
+    <!--  BEGINNING OF MULTIPLE CHOICE INPUT LAYOUT SECTION  !-->
+
+    <Spinner
+        android:layout_row="13"
+        android:layout_marginTop="20px"
+        android:id="@+id/multipleChoiceNum"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+
+        />
+
+
+    <TextView
+
+        android:layout_row="6"
+        android:layout_column="0"
+        android:text="Enter your Button Labels:"
+        android:textSize="10pt"
+        android:id = "@+id/multipleChoicePrompt"
+        android:visibility="gone"
+        />
+
+
+
+    <EditText
+
+
+    android:layout_row="7"
+    android:minLines="1"
+    android:gravity="top|left"
+    android:maxLines="3"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:layout_column="0"
+    android:scrollbars="vertical"
+    android:hint="Enter Button 1 Label:"
+    android:textSize="10pt"
+    android:textColor="#000000"
+    android:id = "@+id/multipleChoiceLabel1"
+    android:visibility="gone"
+
+    />
+
+    <EditText
+
+
+        android:layout_row="8"
+        android:minLines="1"
+        android:gravity="top|left"
+        android:maxLines="3"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_column="0"
+        android:scrollbars="vertical"
+        android:hint="Enter Button 2 Label:"
+        android:textSize="10pt"
+        android:textColor="#000000"
+        android:id = "@+id/multipleChoiceLabel2"
+        android:visibility="gone"
+
+        />
+
+    <EditText
+
+
+        android:layout_row="9"
+        android:minLines="1"
+        android:gravity="top|left"
+        android:maxLines="3"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_column="0"
+        android:scrollbars="vertical"
+        android:hint="Enter Button 3 Label:"
+        android:textSize="10pt"
+        android:textColor="#000000"
+        android:id = "@+id/multipleChoiceLabel3"
+        android:visibility="gone"
+
+        />
+
+    <EditText
+
+
+        android:layout_row="10"
+        android:minLines="1"
+        android:gravity="top|left"
+        android:maxLines="3"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_column="0"
+        android:scrollbars="vertical"
+        android:hint="Enter Button 4 Label:"
+        android:textSize="10pt"
+        android:textColor="#000000"
+        android:id = "@+id/multipleChoiceLabel4"
+        android:visibility="gone"
+
+        />
+
+    <EditText
+
+
+        android:layout_row="11"
+        android:minLines="1"
+        android:gravity="top|left"
+        android:maxLines="3"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_column="0"
+        android:scrollbars="vertical"
+        android:hint="Enter Button 5 Label:"
+        android:textSize="10pt"
+        android:textColor="#000000"
+        android:id = "@+id/multipleChoiceLabel5"
+        android:visibility="gone"
+
+        />
+
+    <EditText
+
+
+        android:layout_row="12"
+        android:minLines="1"
+        android:gravity="top|left"
+        android:maxLines="3"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_column="0"
+        android:scrollbars="vertical"
+        android:hint="Enter Button 6 Label:"
+        android:textSize="10pt"
+        android:textColor="#000000"
+        android:id = "@+id/multipleChoiceLabel6"
+        android:visibility="gone"
+
+        />
+
+    <!--  END OF MULTIPLE CHOICE INPUT LAYOUT SECTION  !-->
+
+
+
+
+
+
+    <Button
+
+
+
+        android:layout_row="15"
+        android:minLines="1"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Save Question"
+        android:textSize="10pt"
+        android:textColor="#000000"
+        android:id = "@+id/saveQuestion"
+        android:visibility="gone"
+        android:layout_marginTop="20dp"
+
+
+        />
+
+
+
+
+
+
+    </GridLayout>

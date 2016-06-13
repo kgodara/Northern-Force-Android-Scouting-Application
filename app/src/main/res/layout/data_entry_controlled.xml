@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="left|top"
+    android:layout_marginLeft="20px"
+    android:layout_marginTop="20px"
+    android:columnCount="4"
+    android:orientation="horizontal"
+    android:id = "@+id/grid"
+
+
+    >
+
+
+
+    <Button
+        android:id = "@+id/bluetoothSync"
+        android:text= "Bluetooth Sync"
+        android:layout_row="0"
+
+        android:textSize="10pt"
+        android:textColor="#000000"
+
+        />
+
+    <TextView
+        android:id="@+id/bluetoothStatus"
+        android:layout_row="0"
+        android:text="Idle"
+        android:layout_marginLeft="20px"
+        android:textSize="10pt"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:id = "@+id/deviceType"
+        android:textSize="10pt"
+        android:text = "Client"/>
+
+
+    <View
+        android:layout_row="1"
+
+        android:layout_width="1400px"
+        android:layout_height="2dp"
+        android:layout_marginLeft="-800px"
+        android:layout_marginBottom="40px"
+        android:layout_marginTop="20px"
+        android:background="@android:color/black" />
+
+    <EditText
+
+        android:id="@+id/teamNumber"
+        android:inputType="number"
+        android:maxLength="4"
+        android:digits="1234567890"
+        android:layout_row="2"
+        android:layout_column="0"
+        android:hint="Team Number"
+        android:textSize="10pt"
+        android:textColor="#000000"
+
+            />
+
+    <EditText
+
+        android:id="@+id/matchNumber"
+        android:inputType="number"
+        android:maxLength="3"
+        android:digits="1234567890"
+        android:layout_row="3"
+        android:layout_column="0"
+        android:hint="Match Number"
+        android:textSize="10pt"
+        android:textColor="#000000"
+
+        />
+
+    <Button
+        android:id = "@+id/noShow"
+        android:text= "No Show"
+        android:layout_row="4"
+        android:layout_marginLeft="-220px"
+        android:textSize="10pt"
+        android:textColor="#000000"
+        />
+
+    <TextView
+        android:id = "@+id/noShowStatus"
+        android:layout_row="4"
+        android:textSize="10pt"
+        android:text=""
+        android:layout_marginLeft="-100px"
+
+
+
+
+        />
+
+    <TextView
+        android:layout_gravity="fill"
+        android:text="Autonomous Mode:"
+        android:textStyle="bold"
+        android:layout_row="5"
+        android:textSize="10pt"
+        android:layout_columnSpan="4"
+        android:id = "@+id/autoHeader"
+        />
+    <include layout="@layout/yes_or_no_entry"
+        android:id="@+id/yesOrNo1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="4"
+        android:layout_row="6"
+
+
+        />
+    <include layout="@layout/yes_or_no_entry"
+        android:id="@+id/yesOrNo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="4"
+        android:layout_row="7"
+
+        />
+
+    <include layout="@layout/defense_options"
+        android:id="@+id/defenses1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="4"
+        android:layout_row="8"
+        android:layout_marginLeft="40px"
+        android:layout_marginBottom="20px"
+
+
+        />
+
+
+
+
+    <include layout="@layout/yes_or_no_entry"
+        android:id="@+id/yesOrNo3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="4"
+        android:layout_row="9"
+
+
+        />
+
+    <CheckBox
+        android:id="@+id/autoHigh"
+        android:layout_row="10"
+        android:text="Scored High"
+        android:textColor="#000000"
+        android:layout_marginLeft="40px"
+        />
+
+    <CheckBox
+        android:id="@+id/autoLow"
+        android:layout_row="10"
+        android:text="Scored Low"
+        android:textColor="#000000"
+
+        />
+
+    <TextView
+        android:layout_marginTop="30px"
+        android:layout_gravity="fill"
+        android:text="Tele-operated Mode:"
+        android:textStyle="bold"
+        android:layout_row="11"
+        android:textSize="10pt"
+
+
+        android:layout_columnSpan="4"
+        android:id = "@+id/teleHeader"
+
+        />
+
+    <include layout="@layout/yes_or_no_entry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30px"
+        android:layout_gravity="fill"
+        android:layout_row="12"
+
+        android:layout_columnSpan="4"
+        android:id = "@+id/yesOrNo4"
+
+        />
+
+    <include layout="@layout/defense_options"
+        android:id="@+id/defenses2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="4"
+        android:layout_row="13"
+        android:layout_marginLeft="40px"
+        android:layout_marginBottom="20px"
+
+
+        />
+
+    <include layout="@layout/yes_or_no_entry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30px"
+        android:layout_gravity="fill"
+        android:layout_row="14"
+
+        android:layout_columnSpan="4"
+        android:id = "@+id/yesOrNo5"
+
+        />
+
+    <include layout="@layout/defense_options"
+        android:id="@+id/defenses3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="4"
+        android:layout_row="15"
+        android:layout_marginLeft="40px"
+        android:layout_marginBottom="20px"
+
+
+    />
+
+    <TextView
+        android:layout_marginTop="10px"
+        android:layout_gravity="fill"
+        android:text="Do they tend to shoot high or shoot low?"
+        android:layout_row="16"
+        android:textColor="#000000"
+        android:textSize="10pt"
+        android:layout_columnSpan="4"
+        android:id = "@+id/typeOfScoring"
+
+        />
+
+
+    <CheckBox
+        android:id="@+id/teleHigh"
+        android:layout_row="17"
+        android:text="Shoot High"
+        android:textColor="#000000"
+        android:layout_marginLeft="40px"
+        android:layout_columnSpan="1"
+        />
+
+    <CheckBox
+    android:id="@+id/teleLow"
+    android:layout_row="17"
+    android:text="Shoot Low"
+    android:textColor="#000000"
+    android:layout_marginLeft="20px"
+        android:layout_columnSpan="1"
+    />
+
+    <CheckBox
+        android:id="@+id/teleNone"
+        android:layout_row="17"
+        android:text="Didn't Shoot"
+        android:textColor="#000000"
+
+        android:layout_columnSpan="2"
+        />
+
+
+    <include layout="@layout/yes_or_no_entry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30px"
+        android:layout_gravity="fill"
+        android:layout_row="19"
+
+        android:layout_columnSpan="4"
+        android:id = "@+id/yesOrNo6"
+
+        />
+
+    <TextView
+        android:layout_marginTop="10px"
+        android:layout_gravity="fill"
+        android:text="Do they tend to be offensive or defensive?"
+        android:layout_row="20"
+        android:textColor="#000000"
+        android:textSize="10pt"
+        android:layout_columnSpan="4"
+        android:id = "@+id/offOrDef"
+
+        />
+
+    <CheckBox
+        android:layout_marginLeft="40px"
+        android:id="@+id/offense"
+        android:layout_row="21"
+        android:text="Offensive"
+        android:textColor="#000000"
+        />
+
+    <CheckBox
+        android:id="@+id/defense"
+        android:layout_row="21"
+        android:text="Defensive"
+        android:textColor="#000000"
+
+        />
+
+    <include layout="@layout/yes_or_no_entry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30px"
+        android:layout_gravity="fill"
+        android:layout_row="22"
+
+        android:layout_columnSpan="4"
+        android:id = "@+id/yesOrNo7"
+
+        />
+
+    <include layout="@layout/yes_or_no_entry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30px"
+        android:layout_marginBottom="30px"
+        android:layout_gravity="fill"
+        android:layout_row="23"
+
+        android:layout_columnSpan="4"
+        android:id = "@+id/yesOrNo8"
+
+        />
+
+
+
+    <EditText
+        android:layout_row="24"
+        android:layout_gravity="fill"
+        android:layout_rowSpan="1"
+        android:layout_columnSpan="4"
+        android:id = "@+id/comments"
+        android:inputType="textMultiLine"
+
+        android:lines="3"
+        android:minLines="3"
+        android:gravity="top|left"
+        android:maxLines="3"
+        android:scrollbars="vertical"
+        android:textSize="10pt"
+        android:hint = "Comments and Observations"
+        />
+
+    <Button
+        android:id="@+id/submit"
+        android:text="     Submit     "
+
+        android:textSize="10pt"
+        android:textColor="#000000"
+        android:layout_row="25"
+        android:layout_marginTop="30px"
+        android:layout_marginBottom="30px"
+        android:layout_gravity="center|center"
+
+
+
+
+
+
+        />
+
+    <TextView
+        android:id="@+id/submitStatus"
+        android:textSize="10pt"
+        android:layout_row="26"
+        android:layout_gravity="center|left"
+
+        />
+
+
+
+
+
+
+</GridLayout>
+
+</ScrollView>

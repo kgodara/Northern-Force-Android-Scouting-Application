@@ -1,0 +1,55 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id = "@+id/dataViewHolder"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+
+    <ScrollView
+
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/dataViewScroller"
+
+        >
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:id = "@+id/dataViewContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+
+
+
+</RelativeLayout>
+
+
+
+    <!--  <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Team to look for"
+            android:id="@+id/seachedTeam"/>
+
+        <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search for team"
+        android:onClick="searchForTeam"
+        android:id="@+id/seachTeamButton"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:id="@+id/teamStats"/>  -->

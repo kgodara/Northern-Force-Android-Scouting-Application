@@ -1,17 +1,19 @@
 package com.example.alex.myapplication;
 
-import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.SpannedString;
+import android.text.TextUtils;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.AdapterView;
+import android.view.ViewGroup;
 import android.widget.CursorAdapter;
-import android.widget.EditText;
-import android.widget.GridView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -19,289 +21,112 @@ import java.util.ArrayList;
 /**
  * Created by alex on 3/9/15.
  */
-public class ViewDataActivity extends ActionBarActivity implements AdapterView.OnItemSelectedListener{
+public class ViewDataActivity extends ActionBarActivity {
 
     private CursorAdapter dataSource;
     private MySQLiteHelper mySQLiteHelper;
     private static UIDatabaseInterface uiDatabaseInterface;
     private String[] cleanNames = new String[17];
     private String[] defenses = new String[9];
+    ViewGroup layoutMaster = null;
+    ArrayList<View> allAddedViews = new ArrayList<View>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.data_view);
-
-        cleanNames[0] = "Team Number";
-        cleanNames[1] = "Match Number";
-        cleanNames[2] = "(Auto) Percentage of times Outworks crossed";
-        cleanNames[3] = "(Auto) Did they breach any defenses?";
-        cleanNames[4] = "(Auto) If so which one?";
-        cleanNames[5] = "(Auto) Did they score?";
-        cleanNames[6] = "(Auto) Percentage of high goals";
-        cleanNames[7] = "(Tele) Did they breach any defenses, which?";
-        cleanNames[8] = "(Tele) Which obstacles did they overcome?";
-        cleanNames[9] = "(Tele) Did they fail to overcome any defences?";
-        cleanNames[10] = "(Tele) Which obstacles did they fail?";
-        cleanNames[11] = "(Tele) Percentage of high shooting";
-        cleanNames[12] = "(Tele) Percentage of reliable scoring";
-        cleanNames[13] = "(Tele) Percentage of offensively played matches";
-        cleanNames[14] = "(Tele) Percentages of tower challenges";
-        cleanNames[15] = "(Tele) Percentages of tower scales";
-        cleanNames[16] = "Other Comments";
-
+        layoutMaster = (ViewGroup) findViewById(R.id.dataViewContent);
 
         mySQLiteHelper = UIDatabaseInterface.getDatabase();
 
         final ViewDataActivity viewDataActivity = this;
-        ArrayList<String> tables = UIDatabaseInterface.getTableNames();
 
-        tables.remove("android_metadata");
+
 
         this.createGridView();
+
+
     }
 
     private void createGridView(){
-        GridView gridView = (GridView) (findViewById(R.id.dataViewGridView));
 
-        final ViewDataAdapter viewDataAdapter = new ViewDataAdapter(mySQLiteHelper, this);
-
-
-        gridView.setAdapter(viewDataAdapter);
-    }
-
-    public void searchForTeam(View v){
-        EditText editText= (EditText) findViewById(R.id.seachedTeam);
-        TextView stats = (TextView) findViewById(R.id.teamStats);
+        Cursor cursor = mySQLiteHelper.selectFromTable("*", "custom");
+        int cols = cursor.getColumnCount();
+        View[] smallBorders = new View[cols - 1];
 
 
+        if (cursor.moveToFirst()) {
+            while (cursor.isAfterLast() == false) {
 
-        if(editText == null){
-            Log.v("Mac Address", "editText is null");
-        }
-        String text = editText.getText().toString();
-        if(text.equals("")){
-            stats.setText("");
-            Log.v("Mac Address", "setting searched team to null");
-            ViewDataAdapter.setSearchedTeam(null);
-        }
-        else{
-            stats.setText("");
-            computeDisplayStats(stats, text);
-            Log.v("Mac Address", "searching for team " + text);
-            ViewDataAdapter.setSearchedTeam(editText.getText().toString());
-        }
+                SpannedString[] row = new SpannedString[cols-1];
+                for (int i = 1; i < cols; i++) {
 
-        this.createGridView();
+                    Spannable question = new SpannableString(cursor.getColumnName(i) + ": ");
+                    String colData = cursor.getColumnName(i);
+                    Log.v("Dynamic Layout", "COL DATA LENGTH: " + colData.length());
+                    Log.v("Dynamic Layout", "FULL QUESTION STRING:" + cursor.getColumnName(i) + ":");
+                    question.setSpan(new ForegroundColorSpan(Color.GRAY), 0, colData.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    question.setSpan(new ForegroundColorSpan(Color.RED), colData.length(), colData.length() + 2, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+                    Spannable answer = new SpannableString(cursor.getString(i));
+                    String answerData = cursor.getString(i);
+                    answer.setSpan(new ForegroundColorSpan(Color.BLACK), 0, answerData.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+                    SpannedString result = (SpannedString) TextUtils.concat(question, answer);
+                    row[i-1] = result;
+             //       row[i] = cursor.getColumnName(i) +"<font color=#ff0000>: </font>" +  cursor.getString(i);
+                        Log.v("Dynamic Layout", cursor.getColumnName(i));
 
-        if (id == R.id.action_enterData){
-            Intent i = new Intent(this, MainActivity.class);
+                        if (i - 1 < smallBorders.length) {
+                            Log.v("Dynamic Layout", "INFLATING SMALL BORDER AT POS " + i);
+                            smallBorders[i - 1] = LayoutInflater.from(this).inflate(R.layout.data_border, layoutMaster, false);
 
-            startActivity(i);
-        }
+                        }
 
-        if (id == R.id.action_viewData){
+                }
 
-        }
 
-        return super.onOptionsItemSelected(item);
-    }
 
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        String selectedTable = (String) adapterView.getItemAtPosition(i);
-
-        Log.v("EnterDataActivity", "The spinner selected the table " + selectedTable);
-
-        UIDatabaseInterface.setCurrentDataViewTable(selectedTable);
-
-        this.createGridView();
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
-
-    }
+                View bigBorder = LayoutInflater.from(this).inflate(R.layout.data_border_gray, layoutMaster, false);
+                allAddedViews.add(bigBorder);
+                layoutMaster.addView(bigBorder);
 
 
 
 
-    public void computeDisplayStats(TextView view, String searchedTeam) {
-        Log.v("DataBase", "SEARCHING TEAM: " + searchedTeam);
-        Cursor cursor = mySQLiteHelper.selectFromTableWhere("*", "Performance", "Team_Number = " + searchedTeam);
-        Cursor c = mySQLiteHelper.selectFromTable("*", "Performance");
-        String[][] data = new String[cursor.getCount()][cursor.getColumnCount() - 4];
+                View dataEntr = (View) LayoutInflater.from(this).inflate(R.layout.data_view_entry, layoutMaster, false);
+                TextView colDispl = (TextView) dataEntr.findViewById(R.id.colDisp);
+
+                colDispl.setText("#" + cursor.getString(0));
+                allAddedViews.add(dataEntr);
+                layoutMaster.addView(dataEntr);
+
+                View big = LayoutInflater.from(this).inflate(R.layout.data_border, layoutMaster, false);
+
+                allAddedViews.add(big);
+                layoutMaster.addView(big);
+
+                for(int i = 0; i < row.length; i++) {
+                    View dataEntryRow = (View) LayoutInflater.from(this).inflate(R.layout.data_view_entry, layoutMaster, false);
+                    TextView colDisplay = (TextView) dataEntryRow.findViewById(R.id.colDisp);
+
+                    colDisplay.setText(row[i]);
+                    allAddedViews.add(dataEntryRow);
+                    layoutMaster.addView(dataEntryRow);
 
 
-        int row = 0;
-        int col = 0;
-
-        int dataCol = 3;
-
-        cursor.moveToFirst();
-
-        while(!cursor.isAfterLast()) {
-
-
-            while(dataCol < (cursor.getColumnCount() - 1)) {
-                //   Log.v("Mac Address", "ADDED: " + cursor.getString(dataCol) + ",    TO: "+ row + ", " + col +"     FROM COL: " + dirtyNames[dataCol]);
-                data[row][col] = cursor.getString(dataCol);
-                col++;
-                dataCol++;
-
+                    if(i < smallBorders.length) {
+                        allAddedViews.add(smallBorders[i]);
+                        layoutMaster.addView(smallBorders[i]);
+                    }
+                }
+                cursor.moveToNext();
             }
-
-
-
-
-            cursor.moveToNext();
-            col = 0;
-            dataCol = 3;
-            row++;
         }
-
-Log.v("DataBase", "DATA ARRAY HAS ROW SIZE: " + row);
-        Log.v("DataBase", "DATA ARRAY HAS ROWS: " + data.length);
-
-
-//       data = Arrays.copyOf(data, fin);
-
-      //  Log.v("DataBase", Array)
-
-
-        TwoNum[] percents = new TwoNum[14];
-        for (int i = 0; i < percents.length; i++) {
-            percents[i] = new TwoNum();
-        }
-        String[] dirt = new String[14];
-        dirt[0] = cleanNames[2];
-        dirt[1] = cleanNames[3];
-        dirt[2] = cleanNames[4];
-        dirt[3] = cleanNames[5];
-        dirt[4] = cleanNames[6];
-        dirt[5] = cleanNames[7];
-        dirt[6] = cleanNames[8];
-        dirt[7] = cleanNames[9];
-        dirt[8] = cleanNames[10];
-        dirt[9] = cleanNames[11];
-        dirt[10] = cleanNames[12];
-        dirt[11] = cleanNames[13];
-        dirt[12] = cleanNames[14];
-        dirt[13] = cleanNames[15];
-
-        //0, 1, 3, 5, 7, 10, 11, 12, 13
-        //14 params in all, 9-10 are T/F
-        int divisor = data.length;
-        int percentIndex = 0;
-        int highest = 0;
-        for (int i = 0; i < data.length; i++) {
-
-
-            for (int l = 0; l < data[i].length; l++) {
-
-                if (data[i][l].contains("Hiigh")) {
-                    percents[percentIndex].setFirstNum(percents[percentIndex].getFirstNum() + 1);
-                    percents[percentIndex].setTwoNum(l);
-                    percentIndex++;
-                }
-
-                if (data[i][l].contains("Loow")) {
-                    percents[percentIndex].setTwoNum(l);
-                    percentIndex++;
-                }
-
-                if (data[i][l].contains("high")) {
-                    percents[percentIndex].setFirstNum(percents[percentIndex].getFirstNum() + 1);
-                    percents[percentIndex].setTwoNum(l);
-                    percentIndex++;
-                }
-
-                if (data[i][l].contains("low")) {
-                    percents[percentIndex].setTwoNum(l);
-                    percentIndex++;
-                }
-
-
-                if (data[i][l].equals("true")) {
-
-
-                    percents[percentIndex].setFirstNum(percents[percentIndex].getFirstNum() + 1);
-                    percents[percentIndex].setTwoNum(l);
-                    percentIndex++;
-                }
-                if (data[i][l].equals("false")) {
-                    percents[percentIndex].setTwoNum(l);
-                    percentIndex++;
-                }
-
-
-            }
-            percentIndex = 0;
-
-
-        }
-
-
-
-
-
-     //   Log.v("DataBase", "YO SUP");
-
-
-        Log.v("DataBase", "DIVISOR: " + divisor);
-        for (int g = 0; g < percents.length; g++) {
-            int result = 0;
-
-            Log.v("DataBase", "BASE ABOUT TO BE COMPUTED: " + percents[g].getFirstNum());
-            percents[g].setFirstNum((int) ((((double) percents[g].getFirstNum()) / divisor) * 100));
-
-            Log.v("DataBase", "PERCENT: " + percents[g].getFirstNum());
-            Log.v("DataBase", "\n");
-
-        }
-
-        for (int g = 0; g < percents.length; g++) {
-
-
-            if (percents[g].getFirstNum() > 0) {
-                view.setText(view.getText() + dirt[percents[g].getTwoNum()] + ": " + percents[g].getTwoNum() + "%\n");
-            }
-
-        }
-
-
-
-
 
     }
-
-
-
-
-
-
-
 
 
 }

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="components_array">
+        <item>Text Field</item>
+        <item>Numbers Only Input</item>
+        <item>True/False Input</item>
+        <item>Multiple Choice</item>
+
+    </string-array>
+
+
+
+</resources>

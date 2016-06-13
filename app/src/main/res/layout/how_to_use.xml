@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#ffb3b3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:layout_gravity="center"
+        >
+
+        <TextView
+            android:layout_gravity="center|center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "Getting Started:"
+            android:textColor="#00548c"
+            android:textSize="10pt"
+            android:textStyle="bold"
+
+            />
+
+        <TextView
+            android:layout_gravity="center|center"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. Make a Data Layout by going to the 'Make A Layout' section in the main menu\n\n2.Add as many questions as you like, using the drop-down menu located above the 'Save Question' Button to change question type\n\n3.Fill out the required parameters for each question and click save for each question\n\n4. Click 'Finalize and Submit' in the top right corner to create your Data Layout\n\n5. Go to the 'Enter Data' Section in the Main Menu to enter data using the 'Submit' button at the bottom\n\n6. View data through the View Data Section of the Main Menu"
+
+            android:textColor="#00548c"
+
+            />
+
+        <TextView
+            android:layout_marginTop="12dp"
+            android:layout_gravity="center|center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "Bluetooth:"
+            android:textColor="#00548c"
+            android:textSize="10pt"
+            android:textStyle="bold"
+
+            />
+
+        <TextView
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_gravity="center|center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#00548c"
+            android:text = "1. First you will need at least two Android devices running the Complete Data Manager application\n\n2.If you are sending collected data ensure that all devices have the same data layout\n\n3.Open the application on all devices and go to the 'Transfer Data' Section\n\n4.On the receiving device select, the 'Receive Sent Layout/Data' Button\n\n5. Click 'Begin Bluetooth Process'\n\n6. On the sending device select either 'Send Collected Data' or 'Send Custom Layout'\n\n7.Enter the Bluetooth Address of the receiving device (This can be found in Settings-->About-->Status-->Bluetooth Address)\n\n8. Click 'Begin Bluetooth Process'\n\n9. Wait for notifications, give at least 15 seconds."
+
+
+            />
+
+
+    </LinearLayout>
+
+</ScrollView>

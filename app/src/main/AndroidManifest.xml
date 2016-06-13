@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.alex.myapplication" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="My Application"
+
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="Complete Data Manager" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ExportDataActivity"
+            android:label="Export to File" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <!--   <category android:name="android.intent.category.LAUNCHER" /> -->
+              </intent-filter>
+          </activity>
+
+
+          <activity
+              android:name=".ViewDataActivity"
+              android:label="Data View" >
+              <intent-filter>
+                  <action android:name="android.intent.action.MAIN" />
+
+                  <!--    <category android:name="android.intent.category.LAUNCHER" /> -->
+               </intent-filter>
+           </activity>
+
+
+           <activity
+               android:name=".ControlledEnterDataActivity"
+               android:windowSoftInputMode="stateHidden"
+               android:label="Controlled Data Entry" >
+
+               <intent-filter>
+                   <action android:name="android.intent.action.MAIN" />
+
+                   <!--      <category android:name="android.intent.category.LAUNCHER" />-->
+                 </intent-filter>
+             </activity>
+
+             <activity
+                 android:name=".DynamicEnterDataActivity"
+                 android:windowSoftInputMode="stateHidden"
+                 android:label="Dynamic Data Entry" >
+
+                 <intent-filter>
+                     <action android:name="android.intent.action.MAIN" />
+
+                  <!--   <category android:name="android.intent.category.LAUNCHER" /> -->
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".MakeLayoutActivity"
+            android:windowSoftInputMode="stateHidden"
+            android:label="Make a Layout" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <!--  <category android:name="android.intent.category.LAUNCHER" /> -->
+             </intent-filter>
+         </activity>
+
+        <activity
+            android:name=".HowToUseActivity"
+            android:windowSoftInputMode="stateHidden"
+            android:label="" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <!--  <category android:name="android.intent.category.LAUNCHER" /> -->
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".AboutActivity"
+            android:windowSoftInputMode="stateHidden"
+            android:label="About" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <!--  <category android:name="android.intent.category.LAUNCHER" /> -->
+            </intent-filter>
+        </activity>
+
+
+     </application>
+
+ </manifest>

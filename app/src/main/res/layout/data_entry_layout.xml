@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dataEntryLinearLayout"
+        android:orientation="vertical">
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/dataEntryTableSpinner">
+
+        </Spinner>
+        <com.example.alex.myapplication.NestedListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dataEntryListView">
+
+        </com.example.alex.myapplication.NestedListView>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/submitButton"
+            android:text="Submit"/>
+
+    </LinearLayout>
+
+</ScrollView>

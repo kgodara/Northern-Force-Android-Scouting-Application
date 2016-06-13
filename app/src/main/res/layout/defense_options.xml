@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="2"
+    android:orientation="horizontal"
+    android:id = "@+id/defenses"
+    android:layout_gravity="top|center"
+    android:layout_marginLeft="40px"
+    android:layout_marginTop="20px"
+    >
+    <CheckBox
+
+        android:layout_column="0"
+        android:layout_row="0"
+        android:text="Low Bar"
+        android:id="@+id/defense1"
+        />
+
+    <CheckBox
+
+        android:layout_column="0"
+        android:layout_row="1"
+        android:text="Portcullis"
+        android:id="@+id/defense2"
+        />
+
+    <CheckBox
+
+        android:layout_column="1"
+        android:layout_row="1"
+        android:text="Cheval de Frise"
+        android:id="@+id/defense3"
+        />
+
+    <CheckBox
+
+        android:layout_column="0"
+        android:layout_row="2"
+        android:text="Moat"
+        android:id="@+id/defense4"
+        />
+
+    <CheckBox
+
+        android:layout_column="1"
+        android:layout_row="2"
+        android:text="Ramparts"
+        android:id="@+id/defense5"
+        />
+
+    <CheckBox
+
+        android:layout_column="0"
+        android:layout_row="3"
+        android:text="Drawbridge"
+        android:id="@+id/defense6"
+        />
+
+    <CheckBox
+
+        android:layout_column="1"
+        android:layout_row="3"
+        android:text="Sally Port"
+        android:id="@+id/defense7"
+        />
+
+    <CheckBox
+
+        android:layout_column="0"
+        android:layout_row="4"
+        android:text="Rock Wall"
+        android:id="@+id/defense8"
+        />
+
+    <CheckBox
+
+        android:layout_column="1"
+        android:layout_row="4"
+        android:text="Rough Terrain"
+        android:id="@+id/defense9"
+        />
+
+
+</GridLayout>

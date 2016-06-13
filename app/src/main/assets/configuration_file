@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+
+    <Teams>
+        <int>Team_Number</int>
+        <String>Defining_Characteristics</String>
+        <int>Average_Score</int>
+        <String>High_School</String>
+    </Teams>
+
+    <Matches>
+        <int>Team_Number</int>
+        <int>Match_Number</int>
+        <String>Event_Name</String>
+        <int>Red_One</int>
+        <int>Red_Two</int>
+        <int>Red_Three</int>
+        <int>Blue_One</int>
+        <int>Blue_Two</int>
+        <int>Blue_Three</int>
+    </Matches>
+
+    <Performance>
+        <int>Team_Number</int>
+        <int>Match_Number</int>
+        <int>Score</int>
+        <int>Performance</int>
+        <YorN>TestMagic</YorN>
+    </Performance>
+
+    <Events>
+        <String>Event_Name</String>
+        <String>Date</String>
+        <String>Location</String>
+    </Events>
+
+</config>
